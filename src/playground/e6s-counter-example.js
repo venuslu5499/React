@@ -1,33 +1,70 @@
-let count = 0;
 
-const addOne = (x) => {
-    count++;
-    renderCounterApp();
-};
+class Counter extends React.Component {
+    constructor(props){
+        super(props);
+        this.handleAddOne = this.handleAddOne.bind(this);
+        this.handleMinusOne = this.handleMinusOne.bind(this);
+        this.handeleReset = this.handleReset(this);
+    }
 
-const minusOne = (x) => {
-    count--;
-    renderCounterApp();
+    handleAddOne(){
+        console.log("+1");
+    }
+
+    handleMinusOne(){
+        console.log("-1");
+    }
+
+    handleReset(){
+        console.log("reset");
+    }
+
+    render(){
+        return (
+            <div>
+                <h1>Count: </h1>
+                <button onClick={this.handleAddOne}>+1</button>
+                <button onClick={this.handleMinusOne}>-1</button>
+                <button onClick={this.handleReset}>reset</button>
+            </div>
+        )
+    }
 }
 
-const reset = (x) => {
-    count = 0;
-    renderCounterApp()
-}
+ReactDOM.render(<Counter />, document.getElementById("app"));
 
-const appRoot = document.getElementById("app");
+// let count = 0;
 
-const renderCounterApp = () => {
-    const templateThree = (
-        <div>
-            <h1>Count: {count}</h1>
-            <button onClick={addOne}>+1</button>
-            <button onClick={minusOne}>-1</button>
-            <button onClick={reset}>reset</button>
-        </div>
-    );
-    ReactDOM.render(templateThree, appRoot);
-};
+// const addOne = (x) => {
+//     count++;
+//     renderCounterApp();
+// };
+
+// const minusOne = (x) => {
+//     count--;
+//     renderCounterApp();
+// }
+
+// const reset = (x) => {
+//     count = 0;
+//     renderCounterApp()
+// }
+
+// const appRoot = document.getElementById("app");
+
+// const renderCounterApp = () => {
+//     const templateThree = (
+//         <div>
+//             <h1>Count: {count}</h1>
+//             <button onClick={addOne}>+1</button>
+//             <button onClick={minusOne}>-1</button>
+//             <button onClick={reset}>reset</button>
+//         </div>
+//     );
+//     ReactDOM.render(templateThree, appRoot);
+// };
 
 
-renderCounterApp();
+// renderCounterApp();
+
+
