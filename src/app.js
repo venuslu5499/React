@@ -1,9 +1,27 @@
+class IndecisionApp extends React.Component{
+    render(){
+        const title = 'What ToDo?';
+        const subtitle = 'Put your life in the hands of a computer'
+        const option = ['Item One', 'Item Two', 'Item Three']
+
+        return(
+            <div>
+                {/* title, subtitle - props */}
+                <Header title={title} subtitle={subtitle}/> 
+                <Action />
+                <Options option={option} />
+                <AddOption />
+            </div>
+        )
+    }
+}
+
 class Header extends React.Component {
     render(){
         return (
             <div>
-                <h1>What ToDo?</h1>
-                <h2>Let the machine decide for you.</h2>
+                <h1>{this.props.title}</h1>
+                <h2>{this.props.subtitle}</h2>
             </div>
         )
     }
@@ -23,10 +41,20 @@ class Options extends React.Component{
     render(){
         return (
             <div>
-                <ol>
-                    <li>Item One</li>
-                    <li>Item Two</li>
-                </ol>
+                {
+                    this.props.option.map((option) => <p>{option}</p>)
+                }
+                <Option />
+            </div>
+        )
+    }
+}
+
+class Option extends React.Component{
+    render(){
+        return(
+            <div>
+                Option component here 
             </div>
         )
     }
@@ -36,8 +64,7 @@ class AddOption extends React.Component{
     render(){
         return(
             <div>
-                <input type="text" />
-                <button>Add Option</button>
+                AddOption component here
             </div>
         )
     }
@@ -46,13 +73,4 @@ class AddOption extends React.Component{
 // Options ->  Options component here
 // AddOption -> AddOption componend here
 
-const jsx = (
-  <div>
-      <Header />
-      <Action />
-      <Options />
-      <AddOption />
-  </div>  
-);
-
-ReactDOM.render(jsx, document.getElementById("app"));
+ReactDOM.render(<IndecisionApp />, document.getElementById("app"));

@@ -3,6 +3,8 @@
 // Setup construction to take name and age (default to 0)
 // getDescription - Andrew Mead is 26 years(s) old.
 
+// this - reference to the current instance of the class
+
 class Person {
     constructor(name = 'Anonymous', age = 0){
         this.name = name;
