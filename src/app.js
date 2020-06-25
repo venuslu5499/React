@@ -33,11 +33,12 @@ class IndecisionApp extends React.Component{
 
         this.setState((prevState) => {
             return {
+                // hi
                 options: prevState.options.concat(option)
             }
         })
     }
-
+    
     render(){
         const title = 'What ToDo?';
         const subtitle = 'Put your life in the hands of a computer'
