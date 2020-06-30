@@ -3,7 +3,7 @@ console.log('App.js is running!');
 // JSX - JavaScript XML (accepts HTML code in React)
 // Babel - translates HTML to Java
 // React - converts React to javascript
-// () - html
+// () - html 
 
 // only render the subtitle (and p tag) if subtitle exist - logical and operator
 // render new p tag - if options.length > 0 "Here are your options" "No Options"
