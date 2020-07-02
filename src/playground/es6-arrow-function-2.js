@@ -1,4 +1,5 @@
 // arguments object - no longer bound with arrow functions
+// arrow functions dont have their own this binding so they use their parent's instead
 
 const add = (a, b) => {
     //console.log(arguments);
